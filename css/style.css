@@ -1,3 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 1200px;
+  }
+
+.container {
+    max-width: 1200px;
+    margin: 0;
+    padding: 0;
+  }
+
 body {font-size: 20px;
     line-height: 2;
     font-family: 'Puritan', sans-serif;
@@ -15,6 +28,7 @@ body {font-size: 20px;
 .menu a:hover, .menu a:focus, menu a:active {background-color: rgb(181, 240, 181); color: black;}
 
 .imgLogoCKP {
-    width: 50%;
+    max-width: 100%;
+    height: auto;
     background-color: rgb(181, 240, 181);
   }
