@@ -23,7 +23,7 @@
 	--spacer-double: calc(var(--spacer) * 2);
 }
 
-
+/*toto asi umažu - je to o formátování screenu a ten budu později upravovat - po menu*/
 * {
     margin: 0;
     padding: 0;
@@ -48,29 +48,34 @@ body {font-size: 20px;
   }
 
 /* Menu */
-.menu li {
-  display: inline-block;
-}
 
-.menu {
-  margin: 0; 
-  padding: 0; 
-  text-align: center; 
+.menu__list {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
   background-color: black;
 }
 
-  .menu a {
-  color: white; 
-  text-decoration: none; 
-  font-weight: 700; 
-  padding: 15px 40px; 
+/* Styly pro položky menu */
+.menu__item {
+  list-style: none;
+}
+
+.menu__item a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 15px 40px;
   display: inline-block;
 }
-    
-.menu a:hover, .menu a:focus, menu a:active {
-  background-color: rgb(181, 240, 181); 
-  color: black;}
 
+.menu__item a:hover,
+.menu__item a:focus,
+.menu__item a:active {
+  background-color: rgb(181, 240, 181);
+  color: black;
+}
 .imgLogoCKP {
     max-width: 100%;
     max-height: 20%;
@@ -79,6 +84,7 @@ body {font-size: 20px;
     background-color: rgb(181, 240, 181);
   }
 
+  /*footer*/
   footer {
     bottom: 0;
     left: 0;
