@@ -57,6 +57,11 @@ body {font-size: 20px;
   background-color: black;
 }
 
+.menu__list--inline {
+  display: flex;
+  justify-content: center;
+}
+
 /* Styly pro položky menu */
 .menu__item {
   list-style: none;
@@ -76,12 +81,39 @@ body {font-size: 20px;
   background-color: rgb(181, 240, 181);
   color: black;
 }
+
 .imgLogoCKP {
     max-width: 100%;
     max-height: 20%;
     align-items: center;
     height: auto;
     background-color: rgb(181, 240, 181);
+  }
+
+  /*motto uvod každé stránky*/
+  .item__about {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .item__image {
+    flex: 1;
+  }
+  
+  .item__frame {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .item__title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .item__text {
+    font-size: 16px;
   }
 
   /*footer*/
