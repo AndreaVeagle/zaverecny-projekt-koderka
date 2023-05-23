@@ -1,20 +1,8 @@
 /*upravim root*/
 :root {
-	--grey-100: hsl(0, 0%, 10%);
-	--grey-200: hsl(0, 0%, 20%);
-	--grey-300: hsl(0, 0%, 30%);
-	--grey-400: hsla(162, 91%, 56%, 0.904);
-	--grey-500: hsl(0, 0%, 50%);
-	--grey-600: hsl(0, 0%, 60%);
-	--grey-700: hsl(0, 0%, 70%);
-	--grey-800: hsl(0, 0%, 80%);
-	--grey-900: hsl(0, 0%, 90%);
 
 	--primary: hsl(120, 66%, 83%);
 	--accent: #fc0;
-
-	--font-default: 'Open Sans', sans-serif;
-	--font-special: 'Raleway', sans-serif;
 
 	--spacer: 1rem;
 	--spacer-quarter: calc(var(--spacer) / 4);
@@ -193,5 +181,3 @@ body {font-size: 20px;
   }
 }
 
-  
-  }
