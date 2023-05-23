@@ -130,54 +130,36 @@ body {font-size: 20px;
 
   /* Zobrazení mobil vloženo 23052023 v 8 hodin případně umazat */
   @media screen and (max-width: 768px) {
+      /* Hamburger menu - zobrazení v mobilním režimu */
+      .menu__list--hamburger {
+        display: block;
+      }
 
-    /* Hamburger menu */
-  .menu__list {
-    display: none;
-  }
+      /* Skrytí běžného menu */
+      .menu__list--inline {
+        display: none;
+      }
 
-  .menu__list--hamburger {
-    display: block;
-  }
+      /* Zarovnání item__about pomocí flexboxu na jednořádkový layout */
+      .item__about {
+        display: flex;
+        flex-wrap: wrap;
+      }
 
-  /* Zarovnání obrázku a textu v item item__about */
-  .item__image {
-    width: 100%;
-    text-align: center;
-  }
+      /* Nastavení velikosti obrázku na 100% šířky */
+      .item__image img {
+        width: 100%;
+        height: auto;
+      }
 
-  .item__frame {
-    text-align: center;
-  }
+      /* Zarovnání textu v item__frame na střed ve vrchní části */
+      .item__frame {
+        text-align: center;
+      }
 
-  /* Reference */
-  .item__more {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  /* Nabídka vzdělávání */
-  .item__offer {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  /* Kontakt */
-  .rowContact {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 20px;
-  }
-
-  .boxperson {
-    text-align: center;
-  }
-
-  /* Adresa mapa */
-  .rowAdress {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 20px;
-  }
+      /* Zmenšení písma v item__text */
+      .item__text {
+        font-size: 14px;
+      }
 }
 
