@@ -137,3 +137,61 @@ body {font-size: 20px;
     width: 30px;
     height: 30px;
   }
+
+
+
+  /* Zobrazení mobil vloženo 23052023 v 8 hodin případně umazat */
+  @media screen and (max-width: 768px) {
+
+    /* Hamburger menu */
+  .menu__list {
+    display: none;
+  }
+
+  .menu__list--hamburger {
+    display: block;
+  }
+
+  /* Zarovnání obrázku a textu v item item__about */
+  .item__image {
+    width: 100%;
+    text-align: center;
+  }
+
+  .item__frame {
+    text-align: center;
+  }
+
+  /* Reference */
+  .item__more {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  /* Nabídka vzdělávání */
+  .item__offer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  /* Kontakt */
+  .rowContact {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+
+  .boxperson {
+    text-align: center;
+  }
+
+  /* Adresa mapa */
+  .rowAdress {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+}
+
+  
+  }
