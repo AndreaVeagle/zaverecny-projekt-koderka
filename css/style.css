@@ -12,20 +12,8 @@
 }
 
 /*toto asi umažu - je to o formátování screenu a ten budu později upravovat - po menu*/
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    max-width: 1200px;
-  }
 
-.container {
-    max-width: 1200px;
-    margin: 0;
-    padding: 0;
-  }
-
-body {font-size: 20px;
+body {font-size: 16px;
     line-height: 2;
     font-family: 'Puritan', sans-serif;
     margin: auto; line-height: 1.5;
@@ -37,7 +25,10 @@ body {font-size: 20px;
 
   div {
     width: 100%;
+    max-width: 1200px;
   }
+
+
 /* Menu */
 
 .menu__list {
@@ -46,6 +37,7 @@ body {font-size: 20px;
   margin: 0;
   padding: 0;
   background-color: black;
+  white-space: nowrap; 
 }
 
 .menu__list--inline {
@@ -119,14 +111,25 @@ body {font-size: 20px;
   }
 
   /*konktakt*/
+  .rowContact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .boxperson {
+    width: calc(33.33% - 10px); 
+    margin-bottom: 20px;
+  }
+
   .icon {
     width: 16px;
     height: 16px;
   }
 
   .profil {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
   }
 
 
