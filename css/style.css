@@ -35,6 +35,9 @@ body {font-size: 20px;
     padding: 0; 
   }
 
+  div {
+    width: 100%;
+  }
 /* Menu */
 
 .menu__list {
