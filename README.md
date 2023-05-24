@@ -1,2 +1,5 @@
 Projekt: Webovky CKP
-2305171530 zatím předchystány soubory a složky, doma musím napojit na eleventy a netlify
+dokončit mobil
+napojit body na jiné barvy
+dokončit kontakty
+propojit s materiály odkazy na zkola.cz

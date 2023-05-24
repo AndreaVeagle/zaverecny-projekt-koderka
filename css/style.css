@@ -27,6 +27,19 @@ body {
     background-color: var(--primary);
   }
 
+  .kp-page {
+    background-color: var(--secondary);
+  }
+  
+  .ppo-page {
+    background-color: var(--terciaary);
+  }
+  
+  .materialy-page {
+    background-color: var(--quaternary);
+  }
+  
+
 p {
   margin: 0;
   padding: 0;
@@ -248,7 +261,7 @@ div {
       padding: 0 var(--spacer-quarter);
     }
     
-  }
+  
   
       /* Zarovnání item__about pomocí flexboxu na jednořádkový layout */
       .item__about {

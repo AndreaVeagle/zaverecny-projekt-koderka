@@ -13,9 +13,10 @@
 	<link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
 
+<body class="{% if page.url === '/kp/' %}kp-page{% elseif page.url === '/ppo/' %}ppo-page{% elseif page.url === '/materialy/' %}materialy-page{% else %}homepage{% endif %}">
 <!-- O CKP -->
+
 
 <header class="header">
      <img class="imgLogoCKP" src="/images/imgLogoCKP.png" alt="Logo CKP">
