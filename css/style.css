@@ -5,6 +5,7 @@
   --secondary: hsl(220, 66%, 83%);
   --terciaary: hsl(320, 66%, 83%);
   --quaternary: hsl(420, 66%, 83%);
+  --hover: hsl(140, 3%, 79%);
 	--accent: rgb(240, 212, 102);
 
 	--spacer: 4rem;
@@ -15,6 +16,16 @@
 }
 
 /*toto asi umažu - je to o formátování screenu a ten budu později upravovat - po menu*/
+
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
 
 body {
     font-size: 16px;
@@ -27,6 +38,13 @@ body {
     background-color: var(--primary);
   }
 
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacer)
+}
+
+  /*snaha změnit barvu podstránek*/
   .kp-page {
     background-color: var(--secondary);
   }
@@ -58,6 +76,7 @@ div {
   display: flex;
   justify-content: center;
   width: 100%;
+  margin-bottom: var(--spacer);
 }
 
 .item-frame {
@@ -75,6 +94,7 @@ div {
   margin: 0;
   padding: 0;
   background-color: black;
+  margin-bottom: var(--spacer)
 }
 
 /*asi navíc umazat*/
@@ -87,10 +107,13 @@ div {
 /* Styly pro položky menu */
 .menu__item {
   list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu__item a {
-  color: var(--primary);
+  color: var(--hover);
   text-decoration: none;
   font-weight: 700;
   padding: 15px 40px;
@@ -103,7 +126,7 @@ div {
 .menu__item a:hover,
 .menu__item a:focus,
 .menu__item a:active {
-  background-color: var(--primary);
+  background-color: var(--hover);
   color: black;
 }
 
@@ -113,40 +136,47 @@ div {
 }
 
 .imgLogoCKP {
-    width: 400px;
     max-width: 100%;
+    max-height: 100px;
     align-items: center;
-    height: auto;
-    background-color: rgb(181, 240, 181);
+    object-fit: contain;
   }
 
-  /*motto uvod každé stránky*/
-  .item__about {
-    display: flex;
-    align-items: flex-start;
-  }
-  
-  .item__image {
-    flex: 1;
-    padding: var(--spacer);
-    width: 450px;
-  }
-  
-  .item__frame {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-  
-  .item__title {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  .item__text {
-    font-size: 16px;
-  }
+/*zobrazení mobil Motto CKP*/
+.item__about {
+  display: flex;
+  flex-wrap: wrap; /* Povolí zalomení prvků na nový řádek */
+  padding: 0 var(--spacer-quarter);
+  justify-content: center; 
+}
+
+.item__image {
+  flex: 0 0 calc(33.33% - var(--spacer-half)); /* Zabere cca jednu třetinu šířky */
+  padding: var(--spacer-quarter);
+}
+
+.item__frame {
+  flex: 0 0 calc(66.67% - var(--spacer-half)); /* Zabere cca dvě třetiny šířky */
+  padding: 0 var(--spacer-quarter);
+}
+
+.item__about {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item__image img {
+  width: 100%;
+  height: auto;
+}
+
+.item__frame {
+  text-align: left; /* Upravujeme zarovnání textu na levou stranu */
+}
+
+.item__text {
+  font-size: 14px;
+}
 
   /*footer*/
   footer {
@@ -169,7 +199,7 @@ div {
   .boxperson {
     display: flex;
     width: calc(33.33% - 10px); 
-    margin-bottom: 20px;
+    margin-bottom: var(--spacer);
   }
 
   .personInfo {
@@ -200,7 +230,23 @@ div {
 }
 
 
-  /* Zobrazení mobil vloženo 23052023 v 13 hodin případně umazat */
+/*zkouška obrázku - umaž*/
+.item__image {
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.479);
+}
+
+.item__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+/*zkouška obrázku po sem*/
+
+  /* Zobrazení mobil upraveno 24052023 v 13 hodin případně umazat */
   @media screen and (max-width: 768px) {
     .header {
       display: flex;
@@ -243,9 +289,9 @@ div {
       display: flex;
       flex-wrap: wrap; /* Povolí zalomení prvků na nový řádek */
        padding: 0 var(--spacer-quarter);
-       justify-content: center; /* Přidáno pro zarovnání na střed */
+       justify-content: center; 
   }
-    }
+    
     
     .item__image {
       flex: 0 0 150px; /* Bude se rozpínat na celou šířku v mobilním rozlišení */
@@ -261,43 +307,59 @@ div {
       padding: 0 var(--spacer-quarter);
     }
     
-  
-  
-      /* Zarovnání item__about pomocí flexboxu na jednořádkový layout */
-      .item__about {
+    .item__about {
         display: flex;
         flex-wrap: wrap;
       }
 
-      /* Nastavení velikosti obrázku na 100% šířky */
-      .item__image img {
+    .item__image img {
         width: 100%;
         height: auto;
       }
 
-      /* Zarovnání textu v item__frame na střed ve vrchní části */
-      .item__frame {
+    .item__frame {
         text-align: center;
       }
 
-      /* Zmenšení písma v item__text */
-      .item__text {
+    .item__text {
         font-size: 14px;
       }
+  
+  /* reference v mobilu */
+  .item-titlemore {
+    text-align: center;
+    margin-bottom: var(--spacer);
+    padding: 0 var(--spacer-quarter);
+  }
+  
+  .h2 {
+    font-style: italic;
+    margin-bottom: var(--spacer-half);
+  }
+  
+  .item-titlemore {
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: var(--spacer-quarter);
+  }
+  
+  .item-textmore {
+    font-style: italic;
+    text-align: center;
+    margin-bottom: var(--spacer);
+  }
 
 
-/*zkouška obrázku - umaž*/
-.item__image {
-  display: inline-block;
-  overflow: hidden;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.item__image img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-/*zkouška obrázku po sem*/
+  
+      /*Kontakty v mobilu*/
+ 
+  .boxperson {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .profil {
+    display: none;
+  }
+    }
