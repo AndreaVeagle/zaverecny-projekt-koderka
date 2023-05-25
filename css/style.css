@@ -5,7 +5,9 @@
   --secondary: hsl(220, 66%, 83%);
   --terciaary: hsl(320, 66%, 83%);
   --quaternary: hsl(420, 66%, 83%);
+  --caption: hsla(120, 16%, 53%, 0.925);
   --hover: hsl(140, 3%, 79%);
+  --title: hsl(140, 3%, 79%);
 	--accent: rgb(240, 212, 102);
 
 	--spacer: 4rem;
@@ -15,9 +17,6 @@
 	--spacer-double: calc(var(--spacer) * 2);
 }
 
-/*toto asi umažu - je to o formátování screenu a ten budu později upravovat - po menu*/
-
-
 body {
   display: flex;
   flex-direction: column;
@@ -25,6 +24,8 @@ body {
 
 .main {
   flex: 1;
+  padding:  var(--spacer);
+  padding-top: 0;
 }
 
 body {
@@ -44,7 +45,7 @@ body {
   padding: var(--spacer)
 }
 
-  /*snaha změnit barvu podstránek*/
+  /*změna barvy podstránek*/
   .kp-page {
     background-color: var(--secondary);
   }
@@ -57,10 +58,17 @@ body {
     background-color: var(--quaternary);
   }
   
-
 p {
   margin: 0;
   padding: 0;
+}
+
+h3 {
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  margin: auto;
 }
 
 h5 {
@@ -76,7 +84,6 @@ div {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-bottom: var(--spacer);
 }
 
 .item-frame {
@@ -85,8 +92,15 @@ div {
   width: 100%;
 }
 
-/* Menu */
+.item-about {
+  margin-bottom: var(--spacer-half);
+}
 
+.item__title {
+  margin-bottom: var(--spacer-half);
+}
+
+/* Menu */
 .menu__list {
   display: flex;
   justify-content: center;
@@ -94,7 +108,6 @@ div {
   margin: 0;
   padding: 0;
   background-color: black;
-  margin-bottom: var(--spacer)
 }
 
 /*asi navíc umazat*/
@@ -121,6 +134,7 @@ div {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .menu__item a:hover,
@@ -178,8 +192,8 @@ div {
   font-size: 14px;
 }
 
-  /*footer*/
-  footer {
+/*footer*/
+footer {
     bottom: 0;
     left: 0;
     width: 100%;
@@ -189,7 +203,7 @@ div {
     font-size: 14px;
   }
 
-  /*konktakt*/
+/*konktakt*/
   .rowContact {
     display: flex;
     flex-wrap: wrap;
@@ -199,7 +213,6 @@ div {
   .boxperson {
     display: flex;
     width: calc(33.33% - 10px); 
-    margin-bottom: var(--spacer);
   }
 
   .personInfo {
@@ -223,14 +236,18 @@ div {
     border-radius: 50%;
     justify-content: center;
     align-items: center;
+    margin-right: var(--spacer-half);
   }
 
 .phone, .mail {
   display: flex;
 }
 
+.item-textmore {
+  font-style: italic;
+}
 
-/*zkouška obrázku - umaž*/
+
 .item__image {
   display: inline-block;
   overflow: hidden;
@@ -244,9 +261,45 @@ div {
   height: auto;
   border-radius: 5px;
 }
-/*zkouška obrázku po sem*/
 
-  /* Zobrazení mobil upraveno 24052023 v 13 hodin případně umazat */
+.item.item__list {
+  list-style-type: none;
+  margin-left: 20px;
+}
+ /*Motto CKP*/
+.item.item__list-item {
+  position: relative;
+  margin-bottom: 5px;
+  padding-left: 15px;
+}
+
+.item.item__list-item:before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--caption);
+  border-radius: 50%;
+}
+
+/*program ke stažení*/
+.download-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #337ab7;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.download-button:hover {
+  background-color: #23527c;
+}
+
+
+  /* screen mobil */
   @media screen and (max-width: 768px) {
     .header {
       display: flex;
@@ -352,8 +405,7 @@ div {
 
 
   
-      /*Kontakty v mobilu*/
- 
+/*Kontakty v mobilu*/
   .boxperson {
     flex-direction: column;
     align-items: flex-start;
@@ -362,4 +414,52 @@ div {
   .profil {
     display: none;
   }
+}
+
+/*screen pc*/
+  @media screen and (min-width: 769px) {
+
+    /*Reference - pc screen*/
+    .item-more {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
     }
+    
+    .item-titlemore {
+      width: 100%;
+      text-align: center;
+      background-color: var(--caption);
+      color: black;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    
+    .item-framemore {
+      width: calc(33.33% - 20px);
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      flex-direction: column; 
+      justify-content: space-between;
+    }
+    
+    .item-framemore p {
+      margin: 0;
+    }
+    
+    .item-button {
+      align-self: flex-end;
+      padding: 10px 20px;
+      background-color: var(--title);
+      color: black;
+      border-color: black;
+      cursor: pointer;
+    }
+    
+    .item-button:hover {
+      background-color: #e2e2e2;
+    }
+    
+  }
