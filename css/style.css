@@ -1,16 +1,18 @@
-/*upravim root*/
 :root {
 
 	--primary: hsl(120, 66%, 83%);
   --secondary: hsl(220, 66%, 83%);
   --terciaary: hsl(320, 66%, 83%);
   --quaternary: hsl(420, 66%, 83%);
-  --caption: hsla(120, 16%, 53%, 0.925);
+  --caption: hsla(120, 15%, 50%);
+  --caption2: hsl(220, 15%, 50%);
+  --caption3: hsl(320, 15%, 50%);
+  --caption4: hsl(420, 15%, 50%);
   --hover: hsl(140, 3%, 79%);
   --title: hsl(140, 3%, 79%);
 	--accent: rgb(240, 212, 102);
 
-	--spacer: 4rem;
+	--spacer: 16px;
 	--spacer-quarter: calc(var(--spacer) / 4);
 	--spacer-half: calc(var(--spacer) / 2);
 	--spacer-bigger: calc(var(--spacer) * 1.5);
@@ -20,32 +22,21 @@
 body {
   display: flex;
   flex-direction: column;
+  font-size: 16px;
+  font-family: 'Puritan', sans-serif;
+  line-height: 1.5;
+  width: 100%;
+  margin: 0;
+  padding: 0; 
+  background-color: var(--primary);
 }
 
 .main {
   flex: 1;
-  padding:  var(--spacer);
-  padding-top: 0;
+  padding-top: var(--spacer-quarter);
 }
 
-body {
-    font-size: 16px;
-    font-family: 'Puritan', sans-serif;
-    line-height: 1.5;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0; 
-    background-color: var(--primary);
-  }
-
-.main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--spacer)
-}
-
-  /*změna barvy podstránek*/
+/*změna barvy podstránek*/
   .kp-page {
     background-color: var(--secondary);
   }
@@ -90,14 +81,19 @@ div {
   display: flex;
   justify-content: center;
   width: 100%;
+  padding-left: var(--spacer);
+  padding-right: var(--spacer);
 }
 
 .item-about {
   margin-bottom: var(--spacer-half);
 }
 
-.item__title {
-  margin-bottom: var(--spacer-half);
+.item__title,
+.item__title--KP,
+.item__title--PPO,
+.item__title--M {
+  margin-bottom: var(--spacer-bigger);
 }
 
 /* Menu */
@@ -119,7 +115,6 @@ div {
 
 /* Styly pro položky menu */
 .menu__item {
-  list-style: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -156,21 +151,73 @@ div {
     object-fit: contain;
   }
 
-/*zobrazení mobil Motto CKP*/
+/*stránka KP, PPO, MAT*/
+.item__about--KP,
+.item__about--PPO,
+.item__about--M {
+  display: flex;
+  padding: 0 var(--spacer-quarter);
+  justify-content: center; 
+}
+
+.item__image--KP,
+.item__image--PPO,
+.item__image--M {
+  flex: 0 0 calc(33.33% - var(--spacer-half)); 
+  padding: var(--spacer-quarter);
+}
+
+.item__frame--KP,
+.item__frame--PPO,
+.item__frame--M {
+  flex: 0 0 calc(66.67% - var(--spacer-half)); 
+  padding: 0 var(--spacer-quarter);
+}
+
+
+.item__image--KP img,
+.item__image--PPO img,
+.item__image--M img {
+  width: 100%;
+  height: auto;
+}
+
+.item__frame--KP,
+.item__frame--PPO,
+.item__frame--M {
+  text-align: left; 
+}
+
+.item__titleoffer--KP, 
+.item__titlemore--KP {
+  background-color: var(--caption2);
+  padding-left: var(--spacer-double);
+  padding-right: var(--spacer-double);
+}
+
+.item__titleoffer--PPO, 
+.item__titlemore--PPO {
+  background-color: var(--caption3);
+  padding-left: var(--spacer-double);
+  padding-right: var(--spacer-double);
+
+}
+
+
+/*zobrazení  Motto CKP*/
 .item__about {
   display: flex;
-  flex-wrap: wrap; /* Povolí zalomení prvků na nový řádek */
   padding: 0 var(--spacer-quarter);
   justify-content: center; 
 }
 
 .item__image {
-  flex: 0 0 calc(33.33% - var(--spacer-half)); /* Zabere cca jednu třetinu šířky */
+  flex: 0 0 calc(33.33% - var(--spacer-half)); 
   padding: var(--spacer-quarter);
 }
 
 .item__frame {
-  flex: 0 0 calc(66.67% - var(--spacer-half)); /* Zabere cca dvě třetiny šířky */
+  flex: 0 0 calc(66.67% - var(--spacer-half)); 
   padding: 0 var(--spacer-quarter);
 }
 
@@ -185,16 +232,30 @@ div {
 }
 
 .item__frame {
-  text-align: left; /* Upravujeme zarovnání textu na levou stranu */
+  text-align: left; 
 }
 
-.item__text {
-  font-size: 14px;
+.item__text,
+.item__text--KP,
+.item__text--PPO,
+.item__text--M {
+  font-size: 18px;
+  padding-left: var(--spacer-bigger);
+  padding-right: var(--spacer-bigger);
+}
+
+.item__textoffer {
+  padding: var(--spacer);
+}
+
+.item__titleoffer, 
+.item__titlemore {
+  padding-left: var(--spacer-double);
+  padding-right: var(--spacer-double);
 }
 
 /*footer*/
 footer {
-    bottom: 0;
     left: 0;
     width: 100%;
     background-color: black;
@@ -204,6 +265,11 @@ footer {
   }
 
 /*konktakt*/
+.item item__contact {
+  padding-left: var(--spacer);
+  padding-right: var(--spacer);
+}
+
   .rowContact {
     display: flex;
     flex-wrap: wrap;
@@ -212,6 +278,7 @@ footer {
   
   .boxperson {
     display: flex;
+    flex-shrink: 0;
     width: calc(33.33% - 10px); 
   }
 
@@ -225,6 +292,7 @@ footer {
   }
   
   .icon {
+    display: block;
     width: 16px;
     height: 16px;
     margin: 5px;
@@ -234,7 +302,6 @@ footer {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    justify-content: center;
     align-items: center;
     margin-right: var(--spacer-half);
   }
@@ -248,7 +315,10 @@ footer {
 }
 
 
-.item__image {
+.item__image,
+.item__image--KP,
+.item__image--PPO,
+.item__image--M {
   display: inline-block;
   overflow: hidden;
   border-radius: 5px;
@@ -267,11 +337,6 @@ footer {
   margin-left: 20px;
 }
  /*Motto CKP*/
-.item.item__list-item {
-  position: relative;
-  margin-bottom: 5px;
-  padding-left: 15px;
-}
 
 .item.item__list-item:before {
   content: "";
@@ -340,14 +405,13 @@ footer {
     /*zobrazení mobil Motto CKP*/
     .item__about {
       display: flex;
-      flex-wrap: wrap; /* Povolí zalomení prvků na nový řádek */
        padding: 0 var(--spacer-quarter);
        justify-content: center; 
   }
     
     
     .item__image {
-      flex: 0 0 150px; /* Bude se rozpínat na celou šířku v mobilním rozlišení */
+      flex: 0 0 150px; 
       padding: var(--spacer-quarter);
       align-items: center;
       justify-content: center;
@@ -374,9 +438,6 @@ footer {
         text-align: center;
       }
 
-    .item__text {
-        font-size: 14px;
-      }
   
   /* reference v mobilu */
   .item-titlemore {
@@ -414,6 +475,10 @@ footer {
   .profil {
     display: none;
   }
+
+  img {
+    display: none;
+  }
 }
 
 /*screen pc*/
@@ -424,6 +489,7 @@ footer {
       display: flex;
       flex-wrap: wrap;
       align-items: flex-start;
+      padding-bottom: var(--spacer);
     }
     
     .item-titlemore {
@@ -461,5 +527,98 @@ footer {
     .item-button:hover {
       background-color: #e2e2e2;
     }
-    
+  
+    /*Nabídka vzdělávání - pc screen*/
+.item.item__offer,
+.item.item__titleoffer--KP,
+.item.item__offer--PPO
+ {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.item__titleoffer {
+  width: 100%;
+  text-align: center;
+  background-color: var(--caption);
+  color: black;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.item__frameoffer {
+  width: calc(50% - 20px);
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  flex-direction: column; 
+  justify-content: space-between;
+}
+
+.item__frameoffer--KP,
+.item__frameoffer--PPO {
+  width: calc(50% - 20px);
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  flex-direction: column; 
+  justify-content: center;
+}
+
+.item__frameoffer p {
+  margin: 0;
+}
+
+.download-button {
+  align-self: flex-end;
+  padding: 10px 20px;
+  background-color: var(--title);
+  color: black;
+  border-color: black;
+  cursor: pointer;
+  text-decoration: none; /* added */
+}
+
+.download-button:hover {
+  background-color: #e2e2e2;
+}
+
+  }
+
+
+  /*SA*/
+  .safe-arrival {
+    display: inline-block;
+  }
+  
+  .safe-arrival__link {
+    display: block;
+    text-decoration: none;
+  }
+  
+  .safe-arrival__frame {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .safe-arrival__image {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .safe-arrival__title {
+    font-size: 16px;
+    margin-top: 0;
+  }
+  
+  .safe-arrival__text {
+    display: block;
+    text-align: center;
+    margin-top: 5px;
   }
